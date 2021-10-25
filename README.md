@@ -18,3 +18,29 @@
 > String
 > This Is A Test
 > ```
+
+## - UDF_FormatString
+
+> dbo.UDF_FormatString: User Defined Function that formats a string according to the received parameters.<br>
+> :pushpin:**Parameters:**
+> * @String		: String to format
+> * @Option		: 0 = Only numbers, 1 = Only letters, 2 = Numbers and letters
+> * @Spaces		: 0 = Without keeping spaces, 1 = keep spaces
+> * @Accent		: 0 = No accents, 1 = With accents (á,é,í,ó,ú,ñ)
+> ### :test_tube:Execution:
+> ```sql
+> SELECT dbo.UDF_FormatString('t1H2i3S i4S a5 t6E7s8T',0,1,0) AS String
+> ```
+> ### :white_check_mark:Result:
+> ```sql
+> String
+> 123 4 5 678
+> ```
+> ```sql
+> SELECT dbo.UDF_FormatString('t1H2i3S i4S a5 t6E7s8T',1,1,0) AS String
+> ```
+> ### :white_check_mark:Result:
+> ```sql
+> String
+> tHiS iS a tEsT
+> ```
