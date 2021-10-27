@@ -44,3 +44,21 @@
 > String
 > tHiS iS a tEsT
 > ```
+
+## - SP_SQL2HTML
+
+> dbo.SP_SQL2HTML: Store Procedure that generate HTML table from SQL query result.<br>
+> :pushpin:**Parameters:**
+> * @QuerySQL		: Valid SQL query whose result will be transformed into an HTML table
+> * @HTML: Output parameter with HTML code
+> ### :test_tube:Execution:
+> ```sql
+> DECLARE 
+>	@HTML    VARCHAR(MAX)
+>
+>	EXEC dbo.SP_Sql2HTML 'SELECT Id AS CODE, Name FROM dbo.Student', 
+>						  @HTML = @HTML OUTPUT
+>	SELECT @HTML AS HTML
+> ```
+> ### :white_check_mark:Result:
+><!DOCTYPE html><html><head></head><body><TABLE align="center"><thead><tr><TH>CODE</TH><TH>Name</TH></tr></thead><TBODY><TR><TD>1</TD><TD>Fernando Casas</TD></TR><TR><TD>2</TD><TD>Pepito Perez</TD></TR></TBODY></TABLE></body> </html>
