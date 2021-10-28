@@ -45,9 +45,9 @@
 > tHiS iS a tEsT
 > ```
 
-## - SP_SQL2HTML
+## - USP_SQL2HTML
 
-> dbo.SP_SQL2HTML: Store Procedure that generate HTML table from SQL query result.<br>
+> dbo.USP_SQL2HTML: Store Procedure that generate HTML table from SQL query result.<br>
 > :pushpin:**Parameters:**
 > * @QuerySQL		: Valid SQL query whose result will be transformed into an HTML table
 > * @HTML: Output parameter with HTML code
@@ -56,7 +56,7 @@
 > DECLARE 
 >	@HTML    VARCHAR(MAX)
 >
->	EXEC dbo.SP_Sql2HTML 'SELECT Id AS CODE, Name FROM dbo.Student', 
+>	EXEC dbo.USP_SQL2HTML 'SELECT Id AS CODE, Name FROM dbo.Student', 
 >						  @HTML = @HTML OUTPUT
 >	SELECT @HTML AS HTML
 > ```
