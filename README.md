@@ -62,3 +62,9 @@
 > ```
 > ### :white_check_mark:Result:
 ><!DOCTYPE html><html><head></head><body><TABLE align="center"><thead><tr><TH>CODE</TH><TH>Name</TH></tr></thead><TBODY><TR><TD>1</TD><TD>Fernando Casas</TD></TR><TR><TD>2</TD><TD>Pepito Perez</TD></TR></TBODY></TABLE></body> </html>
+
+## - SC_SearchText
+
+> SC_SearchText: Script for search text within sql statements in stored procedures, views, triggers.<br>
+> :pushpin:**Parameters:**
+> * @SearchedText	: Variable that contains the text to search.
