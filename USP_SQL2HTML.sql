@@ -1,4 +1,4 @@
-CREATE PROCEDURE dbo.SP_SQL2HTML
+CREATE PROCEDURE dbo.USP_SQL2HTML
 (
 	@QuerySQL    VARCHAR(MAX), 
 	@HTML        VARCHAR(MAX) OUTPUT
@@ -16,7 +16,7 @@ AS
 	DECLARE 
 	@HTML    VARCHAR(MAX)
 
-	EXEC dbo.SP_Sql2HTML 'SELECT Id AS CODE, Name FROM dbo.Student', 
+	EXEC dbo.USP_SQL2HTML 'SELECT Id AS CODE, Name FROM dbo.Student', 
 						  @HTML = @HTML OUTPUT
 	SELECT @HTML AS HTML
 
@@ -205,7 +205,7 @@ BEGIN
 		SELECT @HTML = CONCAT(@FormatHTML, REPLACE(CAST(@StrXML AS VARCHAR(MAX)), '<TABLE>', '<TABLE align="center">'), '</body> </html>')
 	END TRY
 	BEGIN CATCH
-		SET @ErrorMessage = '-> ERROR dbo.SP_SQL2HTML [' + @Message + ']: ' + COALESCE(ERROR_MESSAGE(), '')
+		SET @ErrorMessage = '-> ERROR dbo.USP_SQL2HTML [' + @Message + ']: ' + COALESCE(ERROR_MESSAGE(), '')
 		RAISERROR(@ErrorMessage, 16, 1)
 	END CATCH
 END
