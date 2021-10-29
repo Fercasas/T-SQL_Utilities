@@ -34,7 +34,7 @@ BEGIN
 
 	END TRY
 	BEGIN CATCH
-		SET @ErrorMessage = 'ERROR dbo.USP_XXXXXX [' + COALESCE(@Message,'') + ']:' + COALESCE(ERROR_MESSAGE(), '')
+		SET @ErrorMessage = CONCAT('ERROR ',OBJECT_SCHEMA_NAME(@@PROCID),'.',OBJECT_NAME(@@PROCID),' [' , COALESCE(@Message,'') , ']:' , COALESCE(ERROR_MESSAGE(), ''))
 		RAISERROR(@ErrorMessage, 16, 1)
 	END CATCH
 END
