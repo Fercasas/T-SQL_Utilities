@@ -29,13 +29,12 @@ BEGIN
 	@ErrorMessage    VARCHAR(MAX)
 
 	BEGIN TRY
-		SET @Message = '-->	Start USP_XXXXXX'
-		IF @Debug = 1
-			PRINT @Message
+		SET @Message = '--> Begin dbo.USP_XXXXXX'
+		IF @Debug = 1 PRINT @Message
 
 	END TRY
 	BEGIN CATCH
-		SET @ErrorMessage = 'ERROR dbo.USP_XXXXXX [' + @Message + ']:' + COALESCE(ERROR_MESSAGE(), '')
+		SET @ErrorMessage = 'ERROR dbo.USP_XXXXXX [' + COALESCE(@Message,'') + ']:' + COALESCE(ERROR_MESSAGE(), '')
 		RAISERROR(@ErrorMessage, 16, 1)
 	END CATCH
 END
