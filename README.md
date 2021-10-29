@@ -2,7 +2,7 @@
 
 :scroll: Collection of different scripts with utilities for Transact-SQL (T-SQL)
 
-## - UDF_InitCap
+## - UDF_InitCap.sql
 
 > dbo.UDF_InitCap: User Defined Function that modifies the first letter of each word to uppercase.<br>
 > :pushpin:**If you want to remove double space in the string, uncomment the following statement:**
@@ -19,7 +19,9 @@
 > This Is A Test
 > ```
 
-## - UDF_FormatString
+**[:toolbox: TOP](#t-sql-utilities-toolbox)**
+
+## - UDF_FormatString.sql
 
 > dbo.UDF_FormatString: User Defined Function that formats a string according to the received parameters.<br>
 > :pushpin:**Parameters:**
@@ -45,7 +47,9 @@
 > tHiS iS a tEsT
 > ```
 
-## - USP_SQL2HTML
+**[:toolbox: TOP](#t-sql-utilities-toolbox)**
+
+## - USP_SQL2HTML.sql
 
 > dbo.USP_SQL2HTML: Store Procedure that generate HTML table from SQL query result.<br>
 > :pushpin:**Parameters:**
@@ -63,8 +67,19 @@
 > ### :white_check_mark:Result:
 ><!DOCTYPE html><html><head></head><body><TABLE align="center"><thead><tr><TH>CODE</TH><TH>Name</TH></tr></thead><TBODY><TR><TD>1</TD><TD>Fernando Casas</TD></TR><TR><TD>2</TD><TD>Pepito Perez</TD></TR></TBODY></TABLE></body> </html>
 
-## - SC_SearchText
+**[:toolbox: TOP](#t-sql-utilities-toolbox)**
+
+## - SC_SearchText.sql
 
 > SC_SearchText: Script for search text within sql statements in stored procedures, views, triggers.<br>
 > :pushpin:**Parameters:**
 > * @SearchedText	: Variable that contains the text to search.
+
+**[:toolbox: TOP](#t-sql-utilities-toolbox)**
+
+## - NewSP.sql
+
+> NewSP: Template for new Store Procedure (Template folder).<br>
+
+
+**[:toolbox: TOP](#t-sql-utilities-toolbox)**
