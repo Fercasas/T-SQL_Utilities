@@ -4,9 +4,10 @@
 	AUTHOR: Fernando Casas Osorio
 */
 
-SELECT SC.Name AS                                                              [Schema]
-	 , TA.NAME AS                                                              [Table]
-	 , PA.rows AS                                                              [Rows]
+SELECT QUOTENAME(SC.Name) AS                                                   SchemaName
+	 , QUOTENAME(TA.NAME) AS                                                   TableName
+	 , CONCAT(QUOTENAME(SC.Name), '.', QUOTENAME(TA.NAME)) AS                  CompleteName
+	 , PA.rows AS                                                              Rows
 	 , CAST(ROUND((SUM(a.total_pages) * 8) / 1024.00, 2) AS NUMERIC(36, 2)) AS TotalMB
 	 , CAST(ROUND((SUM(a.used_pages) * 8) / 1024.00, 2) AS NUMERIC(36, 2)) AS  UsedMB
 FROM sys.tables AS TA
@@ -25,4 +26,3 @@ GROUP BY TA.Name
 	   , SC.Name
 	   , PA.Rows
 ORDER BY TotalMB DESC
-	   , TA.Name
