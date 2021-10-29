@@ -4,7 +4,8 @@
 	AUTHOR: Fernando Casas Osorio
 */
 
-SELECT QUOTENAME(SC.Name) AS                                                   SchemaName
+SELECT DB_NAME() AS                                                            DatabaseName
+	 , QUOTENAME(SC.Name) AS                                                   SchemaName
 	 , QUOTENAME(TA.NAME) AS                                                   TableName
 	 , CONCAT(QUOTENAME(SC.Name), '.', QUOTENAME(TA.NAME)) AS                  CompleteName
 	 , PA.rows AS                                                              Rows
