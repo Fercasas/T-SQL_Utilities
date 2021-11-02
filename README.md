@@ -83,3 +83,21 @@
 
 
 **[:toolbox: TOP](#t-sql-utilities-toolbox)**
+
+## - USP_PrintMessage.sql
+
+> USP_PrintMessage: Store Procedure that print the received message by parameter.<br>
+> :pushpin:**Parameters:**
+> *	@Message    : Message (text) to print.
+> *	@IdProc		: @@IdProc of the process from which it is executed.
+> *	@Debug		: Show message if @Debug is 1.
+> ### :test_tube:Execution:
+> ```sql
+> EXEC USP_PrintMessage 'Hello world', @@ProcId, 1
+> ```
+> ### :white_check_mark:Result:
+> ```sql
+>{29-10-21 22:07:28}	>>> Hello world
+> ```
+
+**[:toolbox: TOP](#t-sql-utilities-toolbox)**
