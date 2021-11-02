@@ -25,16 +25,17 @@ AS
 BEGIN
 	SET NOCOUNT ON
 	DECLARE 
+	@SpName          VARCHAR(MAX) = CONCAT(OBJECT_SCHEMA_NAME(@@ProcId), '.', OBJECT_NAME(@@ProcId)), 
 	@Message         VARCHAR(MAX) = NULL, 
 	@ErrorMessage    VARCHAR(MAX)
 
 	BEGIN TRY
-		SET @Message = '--> Begin dbo.USP_XXXXXX'
+		SET @Message = '-> Begin ' + @SpName
 		IF @Debug = 1 PRINT @Message
 
 	END TRY
 	BEGIN CATCH
-		SET @ErrorMessage = CONCAT('ERROR ',OBJECT_SCHEMA_NAME(@@PROCID),'.',OBJECT_NAME(@@PROCID),' [' , COALESCE(@Message,'') , ']:' , COALESCE(ERROR_MESSAGE(), ''))
+		SET @ErrorMessage = CONCAT('ERROR ', @SpName, ' [', COALESCE(@Message, ''), ']: ', COALESCE(ERROR_MESSAGE(), ''))
 		RAISERROR(@ErrorMessage, 16, 1)
 	END CATCH
 END
