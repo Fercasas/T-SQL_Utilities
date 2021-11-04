@@ -9,11 +9,11 @@
   - [- SC_SearchText.sql](#--sc_searchtextsql)
   - [- NewSP.sql](#--newspsql)
   - [- USP_PrintMessage.sql](#--usp_printmessagesql)
-  - [- SC_TableList.sql](#--sc_TableList)
-  - [- SC_IndexFragmentation.sql](#--sc_IndexFragmentation)
-  - [- SC_TablesWithoutPK.sql](#--sc_TablesWithoutPK)
-  - [- SC_TablesWithoutFK.sql](#--sc_TablesWithoutFK)
-
+  - [- SC_TableList.sql](#--sc_TableListsql)
+  - [- SC_IndexFragmentation.sql](#--sc_IndexFragmentationsql)
+  - [- SC_TablesWithoutPK.sql](#--sc_TablesWithoutPKsql)
+  - [- SC_TablesWithoutFK.sql](#--sc_TablesWithoutFKsql)
+  
 ## - UDF_InitCap.sql
 
 > dbo.UDF_InitCap: User Defined Function that modifies the first letter of each word to uppercase.<br>
