@@ -2,6 +2,18 @@
 
 :scroll: Collection of different scripts with utilities for Transact-SQL (T-SQL)
 
+# Table of contents :memo:
+  - [- UDF_InitCap.sql](#--udf_initcapsql)
+  - [- UDF_FormatString.sql](#--udf_formatstringsql)
+  - [- USP_SQL2HTML.sql](#--usp_sql2htmlsql)
+  - [- SC_SearchText.sql](#--sc_searchtextsql)
+  - [- NewSP.sql](#--newspsql)
+  - [- USP_PrintMessage.sql](#--usp_printmessagesql)
+  - [- SC_TableList.sql](#--sc_TableList)
+  - [- SC_IndexFragmentation.sql](#--sc_IndexFragmentation)
+  - [- SC_TablesWithoutPK.sql](#--sc_TablesWithoutPK)
+  - [- SC_TablesWithoutFK.sql](#--sc_TablesWithoutFK)
+
 ## - UDF_InitCap.sql
 
 > dbo.UDF_InitCap: User Defined Function that modifies the first letter of each word to uppercase.<br>
@@ -81,7 +93,6 @@
 
 > NewSP: Template for new Store Procedure (Template folder).<br>
 
-
 **[:toolbox: TOP](#t-sql-utilities-toolbox)**
 
 ## - USP_PrintMessage.sql
@@ -99,5 +110,29 @@
 > ```sql
 >{29-10-21 22:07:28}	>>> Hello world
 > ```
+
+**[:toolbox: TOP](#t-sql-utilities-toolbox)**
+
+## - SC_TableList.sql
+
+> SC_TableList: Script to list tables, rows and size of each one in the database.<br>
+
+**[:toolbox: TOP](#t-sql-utilities-toolbox)**
+
+## - SC_IndexFragmentation.sql
+
+> SC_IndexFragmentation: Script to list index fragmentation in tables.<br>
+
+**[:toolbox: TOP](#t-sql-utilities-toolbox)**
+
+## - SC_TablesWithoutPK.sql
+
+> SC_TablesWithoutPK: Script to list tables without primary key.<br>
+
+**[:toolbox: TOP](#t-sql-utilities-toolbox)**
+
+## - SC_TablesWithoutFK.sql
+
+> SC_TablesWithoutFK: Script to list tables without foreign keys.<br>
 
 **[:toolbox: TOP](#t-sql-utilities-toolbox)**
