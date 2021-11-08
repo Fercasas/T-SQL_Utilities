@@ -9,10 +9,11 @@
   - [- SC_SearchText.sql](#--sc_searchtextsql)
   - [- NewSP.sql](#--newspsql)
   - [- USP_PrintMessage.sql](#--usp_printmessagesql)
-  - [- SC_TableList.sql](#--sc_TableListsql)
-  - [- SC_IndexFragmentation.sql](#--sc_IndexFragmentationsql)
-  - [- SC_TablesWithoutPK.sql](#--sc_TablesWithoutPKsql)
-  - [- SC_TablesWithoutFK.sql](#--sc_TablesWithoutFKsql)
+  - [- SC_TableList.sql](#--sc_tablelistsql)
+  - [- SC_IndexFragmentation.sql](#--sc_indexfragmentationsql)
+  - [- SC_TablesWithoutPK.sql](#--sc_tableswithoutpksql)
+  - [- SC_TablesWithoutFK.sql](#--sc_tableswithoutfksql)
+  - [- UDF_Rem2Spaces.sql](#--udf_rem2spacessql)
   
 ## - UDF_InitCap.sql
 
@@ -134,5 +135,23 @@
 ## - SC_TablesWithoutFK.sql
 
 > SC_TablesWithoutFK: Script to list tables without foreign keys.<br>
+
+**[:toolbox: TOP](#t-sql-utilities-toolbox)**
+
+## - UDF_Rem2Spaces.sql
+
+> dbo.UDF_Rem2Spaces: User Defined Function that remove double spaces into @String.<br>
+> :pushpin:**Parameters:**
+> * @String		: String to which remove double spaces.
+> ### :test_tube:Execution:
+> ```sql
+> SELECT dbo.UDF_Rem2Spaces('This    is   a test') AS String
+> ```
+> ### :white_check_mark:Result:
+> ```sql
+> String
+> This is a test
+> ```
+> ```sql
 
 **[:toolbox: TOP](#t-sql-utilities-toolbox)**
