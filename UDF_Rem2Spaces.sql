@@ -11,7 +11,7 @@ AS
 	@String		: String to which remove double spaces 
 
 	Execution:
-	SELECT dbo.UDF_RemovUDF_Rem2SpaceseDubleSpace('This    is   a test')
+	SELECT dbo.UDF_Rem2Spaces('This    is   a test')
 
 	AUTHOR: Fernando Casas Osorio
 */
