@@ -170,7 +170,6 @@
 > String
 > This is a test
 > ```
-> ```sql
 
 **[:toolbox: TOP](#t-sql-utilities-toolbox)**
 
