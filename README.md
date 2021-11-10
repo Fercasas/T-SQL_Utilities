@@ -189,7 +189,7 @@
 > ```
 > ### :white_check_mark:Result:
 > ```sql
->{29-10-21 22:07:28}	>>> Hello world
+>{29-10-21 22:07:28}	>>> Rows affected 10
 > ```
 > ### :test_tube:Execution:
 > ```sql
