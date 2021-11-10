@@ -8,12 +8,13 @@
   - [- USP_SQL2HTML.sql](#--usp_sql2htmlsql)
   - [- SC_SearchText.sql](#--sc_searchtextsql)
   - [- NewSP.sql](#--newspsql)
-  - [- USP_PrintMessage.sql](#--usp_printmessagesql)
+  - [- USP_PrintM.sql](#--usp_printmsql)
   - [- SC_TableList.sql](#--sc_tablelistsql)
   - [- SC_IndexFragmentation.sql](#--sc_indexfragmentationsql)
   - [- SC_TablesWithoutPK.sql](#--sc_tableswithoutpksql)
   - [- SC_TablesWithoutFK.sql](#--sc_tableswithoutfksql)
   - [- UDF_Rem2Spaces.sql](#--udf_rem2spacessql)
+  - [- USP_PrintR.sql](#--usp_printrsql)
   
 ## - UDF_InitCap.sql
 
@@ -96,20 +97,37 @@
 
 **[:toolbox: TOP](#t-sql-utilities-toolbox)**
 
-## - USP_PrintMessage.sql
+## - USP_PrintM.sql
 
-> USP_PrintMessage: Store Procedure that print the received message by parameter.<br>
+> USP_PrintM: Store Procedure that print the received message by parameter.<br>
+> This SP can be used within scripts and other SPs for debugging.<br>
 > :pushpin:**Parameters:**
 > *	@Message    : Message (text) to print.
-> *	@IdProc		: @@IdProc of the process from which it is executed.
+> *	@IdProc		: @@ProcId of the process from which it is executed.
 > *	@Debug		: Show message if @Debug is 1.
 > ### :test_tube:Execution:
 > ```sql
-> EXEC USP_PrintMessage 'Hello world', @@ProcId, 1
+> EXEC dbo.USP_PrintM 'Hello world', @@ProcId, 1
 > ```
 > ### :white_check_mark:Result:
 > ```sql
 >{29-10-21 22:07:28}	>>> Hello world
+> ```
+> ### :test_tube:Execution:
+> ```sql
+> CREATE OR ALTER PROCEDURE USP_TEST
+> AS
+> BEGIN
+> 	SET NOCOUNT ON 
+> 
+> 	EXEC dbo.USP_PrintM 'Start of the procedure', @@ProcId
+> END
+> 
+> EXEC dbo.USP_TEST
+> ```
+> ### :white_check_mark:Result:
+> ```sql
+>{10-11-21 18:26:59}{dbo.USP_TEST}	>>> Start of the procedure
 > ```
 
 **[:toolbox: TOP](#t-sql-utilities-toolbox)**
@@ -153,5 +171,54 @@
 > This is a test
 > ```
 > ```sql
+
+**[:toolbox: TOP](#t-sql-utilities-toolbox)**
+
+## - USP_PrintR.sql
+
+> USP_PrintR: Store Procedure that print rows afected "@@RowCount" in the last statement.<br>
+> This SP can be used within scripts and other SPs for debugging.<br>
+> :pushpin:**Parameters:**
+> *	@IdProc		: @@ProcId of the process from which it is executed.
+
+> ### :test_tube:Execution:
+> ```sql
+>	SET NOCOUNT ON 
+>	SELECT TOP 10 * FROM dbo.Student
+>	EXEC dbo.USP_PrintR @@ProcId
+> ```
+> ### :white_check_mark:Result:
+> ```sql
+>{29-10-21 22:07:28}	>>> Hello world
+> ```
+> ### :test_tube:Execution:
+> ```sql
+>	SET NOCOUNT ON 
+>	SELECT TOP 10 * FROM dbo.Student
+>	EXEC dbo.USP_PrintR
+> ```
+> ### :white_check_mark:Result:
+> ```sql
+>{29-10-21 22:07:28}	>>> Hello world
+> ```
+> ### :test_tube:Execution:
+> ```sql
+>	CREATE OR ALTER PROCEDURE USP_TEST
+>	AS
+>	BEGIN
+>		SET NOCOUNT ON 
+>		SELECT TOP 10 Id, FirstName, LastName
+>		FROM dbo.Student
+>
+>		EXEC dbo.USP_PrintR @@ProcId
+>	END
+>
+>	EXEC dbo.USP_TEST
+> ```
+> ### :white_check_mark:Result:
+> ```sql
+>{10-11-21 18:26:59}{dbo.USP_TEST}	>>> Filas afectadas 10
+> ```
+
 
 **[:toolbox: TOP](#t-sql-utilities-toolbox)**
