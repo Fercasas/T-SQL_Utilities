@@ -199,7 +199,7 @@
 > ```
 > ### :white_check_mark:Result:
 > ```sql
->{29-10-21 22:07:28}	>>> Hello world
+>{29-10-21 22:07:28}	>>> Rows affected 10
 > ```
 > ### :test_tube:Execution:
 > ```sql
@@ -217,7 +217,7 @@
 > ```
 > ### :white_check_mark:Result:
 > ```sql
->{10-11-21 18:26:59}{dbo.USP_TEST}	>>> Filas afectadas 10
+>{10-11-21 18:26:59}{dbo.USP_TEST}	>>> Rows affected 10
 > ```
 
 
