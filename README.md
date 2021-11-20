@@ -15,7 +15,8 @@
   - [- SC_TablesWithoutFK.sql](#--sc_tableswithoutfksql)
   - [- UDF_Rem2Spaces.sql](#--udf_rem2spacessql)
   - [- USP_PrintR.sql](#--usp_printrsql)
-  
+  - [- UDF_Num2Letras.sql](#--udf_num2letrassql)
+
 ## - UDF_InitCap.sql
 
 > dbo.UDF_InitCap: User Defined Function that modifies the first letter of each word to uppercase.<br>
@@ -219,5 +220,21 @@
 >{10-11-21 18:26:59}{dbo.USP_TEST}	>>> Rows affected 10
 > ```
 
+**[:toolbox: TOP](#t-sql-utilities-toolbox)**
+
+## - UDF_Num2Letras.sql
+
+> UDF_Num2Letras: Función escalar que convierte un número a texto en español; funciona hasta billones.<br>
+> :pushpin:**Parameters:**
+> *	@Numero		: Número a ser convertido.
+
+> ### :test_tube:Ejecución::
+> ```sql
+>	SELECT dbo.UDF_Num2Letras (19865249)
+> ```
+> ### :white_check_mark:Resultado:
+> ```sql
+>diecinueve millones ochocientos sesenta y cinco mil doscientos cuarenta y nueve
+> ```
 
 **[:toolbox: TOP](#t-sql-utilities-toolbox)**
